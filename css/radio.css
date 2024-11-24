@@ -1,45 +1,42 @@
 /* 全体の基本スタイル */
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background: url("../image/bg.png") center center no-repeat;
+  background: url("../image/bg.jpg") center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background-color: #ffffff;
   font-family: Arial, sans-serif;
 }
 
 /* 見出しのスタイル */
 h1 {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3rem;
+  font-size: 2rem;
   color: #333;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 /* コンテナのスタイル */
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 80%;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(10, auto); /* 横に10個のボタンを配置 */
+  gap: 15px; /* ボタン間のスペース */
+  justify-items: center; /* 各ボタンの中央揃え */
+  margin-top: 20px;
 }
 
 /* ラジオボタンのスタイル */
 .radiobox-tremolo {
-  width: 80px;
-  height: 80px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   background-color: #fff;
-  border: 3px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
@@ -47,10 +44,31 @@ h1 {
 .radiobox-tremolo:checked {
   background-color: #007bff;
   border-color: #007bff;
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .radiobox-tremolo:focus {
   outline: none;
-  box-shadow: 0 0 15px royalblue;
+  box-shadow: 0 0 10px royalblue;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.8rem;
+  }
+
+  .container {
+      grid-template-columns: repeat(5, auto); /* 横に5個に変更 */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  .container {
+      grid-template-columns: repeat(3, auto); /* 横に3個に変更 */
+  }
 }
