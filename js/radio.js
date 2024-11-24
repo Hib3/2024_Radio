@@ -55,21 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   for (let i = 0; i < ch.length; i++) {
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = "checkit";
-      input.className = "radiobox-tremolo";
-      input.addEventListener("click", function () {
-          const audio = document.getElementById("music");
-          audio.innerHTML = `<audio id="music" preload="none" autoplay="true">${ch[i]}</audio>`;
-      });
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "checkit";
+    input.className = "radiobox-tremolo";
+    input.addEventListener("click", function () {
+        const audio = document.getElementById("music");
+        audio.innerHTML = `<audio id="music" preload="none" autoplay="true">${ch[i]}</audio>`;
+    });
 
-      container.appendChild(input);
-
-      if ((i + 1) % 10 === 0) {
-          container.appendChild(document.createElement("br"));
-      }
-  }
+    container.appendChild(input);
+}
 });
 
 
